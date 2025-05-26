@@ -1,70 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Hotel Transilvânia 4</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio</title>
+
+  <!-- Estilo e ícones -->
+  <link rel="stylesheet" href="style.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
 </head>
-<body style="background-color:#d3d3d3; color:#333333; font-family:Arial, sans-serif;">
+<body>
 
-    <h1 style="text-align:center;">Hotel Transilvânia 4</h1>
-
-    <!-- Menu de Abas -->
-    <div style="background-color:#a9a9a9; padding: 40px; display: flex; align-items: center; justify-content: center;">
-        <img src="DraculaRenderHT.webp" alt="Logo" width="40" style="vertical-align: middle;">
-        <a href="#home" style="margin-right:15px; color:#000000;">Home</a>
-        <a href="#informacoes" style="margin-right:15px; color:#000000;">Informações</a>
-        <a href="#curiosidades" style="margin-right:15px; color:#000000;">Curiosidades</a>
-        <a href="#personagens" style="margin-right:15px; color:#000000;">Personagens</a>
-        <a href="#videos" style="color:#000000;">Vídeos</a>
+  <!-- NAVBAR com logo, menu e barra de pesquisa -->
+  <nav>
+    <div class="nav-bar">
+      <span class="logo"><a href="#">MeuPortfólio</a></span>
+      <div class="menu">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar..." />
+        <i class='bx bx-search'></i>
+      </div>
     </div>
+  </nav>
 
-    <!-- Seções -->
-    <div id="home" style="padding:15px;">
-        <h2>Home</h2>
-        <p>Opa! Você está na página inicial do site. Aqui você pode ver coisas básicas sobre o filme.</p>
-        <h4>"Hotel Transilvânia 4", também conhecido como Transformonstrão (ou Transformania no original), é aquele tipo de animação que mistura comédia maluca, aventura e aquele toque de coração que a gente curte. É o quarto e último filme da franquia, e dessa vez eles vieram com uma ideia bem divertida: os monstros viram humanos e os humanos viram monstros.</h4>
-        <h4>Descubra o que você não pode ver no filme aqui em nosso site de curiosidades/informações. Seja muito bem-vindo!</h4>
-        <img src="giphy.gif" alt="">
+  <!-- Seção: Home com galeria -->
+  <section id="home" class="main-content">
+    <div class="image-gallery">
+      <div class="image-card">
+        <img src="https://via.placeholder.com/300x200.png?text=" alt="Imagem 1" />
+        <div class="image-overlay">Em breve</div>
+      </div>
+      <div class="image-card">
+        <img src="https://via.placeholder.com/300x200.png?text=" alt="Imagem 2" />
+        <div class="image-overlay">Em breve</div>
+      </div>
+      <div class="image-card">
+        <img src="https://via.placeholder.com/300x200.png?text=" alt="Imagem 3" />
+        <div class="image-overlay">Em breve</div>
+      </div>
     </div>
+    <h1>EM BREVE!</h1>
+  </section>
 
-    <div id="informacoes" style="padding: 60px 20px; background-color: #adabab;">
-        <h2>Informações</h2>
-        <p><strong>1️⃣ A história gira em torno do Drácula, que está prestes a passar o controle do Hotel Transilvânia para o seu genro Johnny — só que, como sempre, as coisas saem do controle!</strong></p>
-        <p><strong>2️⃣ Johnny, animado pra se encaixar de vez na família monstruosa, acaba usando um raio que o transforma em monstro. Só que o raio dá ruim e transforma o Drácula em humano!</strong></p>
-        <p><strong>3️⃣ E aí começa a jornada deles pra tentar reverter tudo antes que seja tarde demais!</strong></p>
-        <img src="familia.jpg" alt="Toda a galera" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
-    </div>
+  <!-- Seção: Sobre -->
+  <section id="sobre">
+    <h2>Sobre</h2>
+    <p>Bem-vindo ao meu portfólio Sou um desenvolvedor web.</p>
+  </section>
 
-    <div id="curiosidades" style="padding: 60px 20px;">
-        <h2>Curiosidades</h2>
-        <h4>🧛‍♂️ O Drácula mudou de voz!</h4>
-        <h4>Nos três primeiros filmes, quem fazia a voz do Drácula (em inglês) era o ator Adam Sandler. Mas no quarto filme, ele não voltou pro papel. Quem assumiu a voz do Drac foi Brian Hull, um dublador famoso na internet por imitar personagens da Disney e fazer vozes caricatas.</h4>
-        <h4>A mudança rolou por questões criativas e contratuais, já que o estúdio quis dar uma "nova cara" (ou melhor, nova voz) pro personagem nessa despedida da franquia.</h4> 
-        <h4>Curioso, né? E apesar da mudança, o Hull mandou bem imitando o estilo do Sandler, então muita gente nem percebe logo de cara.</h4>
-    </div>
+  <!-- Seção: Projetos -->
+  <section id="projetos">
+    <h2>Projetos</h2>
+    <p>Em breve, você poderá ver aqui alguns dos meus  projetos.</p>
+  </section>
 
-    <div id="personagens" style="padding: 60px 20px; background-color: #adabab;">
-        <h2>Personagens</h2>
-        <h4>🧛‍♂️ Drácula (ou “Drac”)</h4>
-        <h4>👨‍🦰 Johnny (Jonathan Loughran)</h4>
-        <h4>🧛‍♀️ Mavis</h4>
-        <h4>🧟‍♂️ Frank (Frankenstein)</h4>   
-        <h4>🐺 Wayne (O Lobisomem)</h4>
-        <h4>🧞 Murray (A Múmia)</h4>
-        <h4>🦠 Griffin (O Homem Invisível)</h4> 
-        <h4>🧪 Van Helsing</h4>
-        <h4>Esses são alguns personagens importantes desse filme.</h4>
-    </div>
-
-    <div id="videos" style="padding: 60px 20px;">
-        <h2>Vídeos</h2>
-        <h4>Aqui você encontra vídeos relacionados ao filme:</h4>
-        <iframe width="560" height="315" 
-                src="https://www.youtube.com/embed/OjDuQ7O9XUo" 
-                frameborder="0" 
-                allowfullscreen>
-        </iframe>
-    </div>
+  <!-- Seção: Contato -->
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Entre em contato comigo pelo email: Ygoralmeide@email.com</p>
+  </section>
 
 </body>
 </html>
+
+

@@ -1,73 +1,167 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfólio</title>
-
-  <!-- Estilo e ícones -->
-  <link rel="stylesheet" href="style.css" />
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire - Guia Completo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- NAVBAR com logo, menu e barra de pesquisa -->
-  <nav>
-    <div class="nav-bar">
-      <span class="logo"><a href="#">MeuPortfólio</a></span>
-      <div class="menu">
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </div>
-      <div class="search-bar">
-        <input type="text" placeholder="Buscar..." />
-        <i class='bx bx-search'></i>
-      </div>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo-text">FF | Guia</h1>
+            
+            <button class="menu-toggle" aria-label="Abrir Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#personagens">Personagens</a></li>
+                    <li><a href="#armas">Armas</a></li>
+                    <li><a href="#mapas">Mapas</a></li>
+                    <li><a href="#itens">Itens</a></li>
+                    <li><a href="#eventos">Eventos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h2>O ÚLTIMO HOMEM DE PÉ</h2>
+                <p>Domine o campo de batalha, explore o arsenal e colete Booyahs!</p>
+                <a href="#" class="btn-primary">JOGUE AGORA</a>
+            </div>
+        </section>
+
+        <section id="personagens" class="section">
+            <h2>👤 Personagens e Habilidades</h2>
+            <div class="grid-cards">
+                <div class="card">
+                    <h3>DJ Alok</h3>
+                    <p>Habilidade Ativa: Drop the Beat. Cria uma aura que aumenta a velocidade e recupera HP.</p>
+                    <button class="btn-secondary" data-action="open-modal" data-personagem="Alok">Ver Detalhes</button>
+                </div>
+                
+                <div class="card">
+                    <h3>Kelly</h3>
+                    <p>Habilidade Passiva: Dash. Aumenta a velocidade de corrida permanentemente.</p>
+                    <button class="btn-secondary" data-action="open-modal" data-personagem="Kelly">Ver Detalhes</button>
+                </div>
+
+                <div class="card">
+                    <h3>Chrono</h3>
+                    <p>Habilidade Ativa: Escudo de Força. Cria um campo de força que bloqueia dano.</p>
+                    <button class="btn-secondary" data-action="open-modal" data-personagem="Chrono">Ver Detalhes</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="armas" class="section dark-bg">
+            <h2>🔫 Arsenal Completo</h2>
+            <div class="tabs-container">
+                <div class="tab">
+                    <h3>Rifles de Assalto (AR)</h3>
+                    <ul>
+                        <li>**SCAR:** Equilíbrio e versatilidade.</li>
+                        <li>**AK47:** Alto dano, mas difícil controle.</li>
+                        <li>**GROZA:** Arma de Airdrop com poder superior.</li>
+                    </ul>
+                    <button class="btn-primary-small" data-action="toggle-info" data-target="ar-info">Guia de Anexos</button>
+                    <div id="ar-info" class="extra-info">
+                        <p>Anexos AR: Silenciador, Foregrip e Magazine estendido são cruciais para a estabilidade e dano.</p>
+                    </div>
+                </div>
+                <div class="tab">
+                    <h3>Snipers e Pistolas</h3>
+                    <ul>
+                        <li>**AWM:** Dano letal a longa distância.</li>
+                        <li>**M1887:** Dano massivo no combate próximo.</li>
+                        <li>**Desert Eagle:** Pistola de alto dano.</li>
+                    </ul>
+                    <button class="btn-primary-small" data-action="toggle-info" data-target="sniper-info">Estatísticas</button>
+                    <div id="sniper-info" class="extra-info">
+                        <p>A AWM tem 90 de dano base. A M1887 tem 100 de dano, mas com apenas duas balas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="mapas" class="section">
+            <h2>🗺️ Os Campos de Batalha</h2>
+            <div class="map-grid">
+                <div class="map-item">
+                    <h3>Bermuda</h3>
+                    <p>O mapa clássico. Possui áreas abertas e zonas urbanas como Peak e Bimasakti Strip.</p>
+                    <button class="btn-secondary">Rotas de Queda</button>
+                </div>
+                <div class="map-item">
+                    <h3>Purgatório</h3>
+                    <p>Conhecido pelo seu terreno montanhoso e pontes longas. Zonas famosas: Brasília e Quarry.</p>
+                    <button class="btn-secondary">Zonas de Loot</button>
+                </div>
+                <div class="map-item">
+                    <h3>Kalahari</h3>
+                    <p>Ambiente desértico e seco, exigindo mais cautela com cover. Zonas famosas: Command Post.</p>
+                    <button class="btn-secondary">Pontos Estratégicos</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="itens" class="section dark-bg">
+            <h2>🎒 Itens Essenciais</h2>
+            <div class="features-list">
+                <ul>
+                    <li>**Kits Médicos:** Recuperação de HP rápida.</li>
+                    <li>**Colete Nível 4:** Máxima proteção contra dano corporal.</li>
+                    <li>**Paredes de Gel (Gloowalls):** Escudo defensivo instantâneo.</li>
+                </ul>
+                <button class="btn-primary">Ver Guia de Utilidade</button>
+            </div>
+        </section>
+        
+        <section id="eventos" class="section">
+            <h2>✨ Eventos e Notícias</h2>
+            <div class="event-feed">
+                <article>
+                    <h4>Novo Passe de Elite: "Fúria Cibernética"</h4>
+                    <p>Disponível na próxima semana. Inclui skins lendárias e recompensas exclusivas.</p>
+                    <span class="date">12/Dez</span>
+                    <button class="btn-secondary">Mais Info</button>
+                </article>
+                <article>
+                    <h4>Atualização da Temporada 2026</h4>
+                    <p>Balanceamento de armas (NERF na M1887) e novo sistema de ranking.</p>
+                    <span class="date">01/Jan</span>
+                    <button class="btn-secondary">Patch Notes</button>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Free Fire Fan Site &copy; 2025 | Não afiliado à Garena.</p>
+    </footer>
+
+    <div id="personagem-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modal-title">Detalhes do Personagem</h3>
+            <p id="modal-description"></p>
+            <p id="modal-ability"></p>
+        </div>
     </div>
-  </nav>
 
-  <!-- Seção: Home com galeria -->
-  <section id="home" class="main-content">
-    <div class="image-gallery">
-      <div class="image-card">
-        <img src="https://via.placeholder.com/300x200.png?text=" alt="Imagem 1" />
-        <div class="image-overlay">Em breve</div>
-      </div>
-      <div class="image-card">
-        <img src="https://via.placeholder.com/300x200.png?text=" alt="Imagem 2" />
-        <div class="image-overlay">Em breve</div>
-      </div>
-      <div class="image-card">
-        <img src="https://via.placeholder.com/300x200.png?text=" alt="Imagem 3" />
-        <div class="image-overlay">Em breve</div>
-      </div>
-    </div>
-    <h1>EM BREVE!</h1>
-  </section>
-
-  <!-- Seção: Sobre -->
-  <section id="sobre">
-    <h2>Sobre</h2>
-    <p>Bem-vindo ao meu portfólio Sou um desenvolvedor web.</p>
-  </section>
-
-  <!-- Seção: Projetos -->
-  <section id="projetos">
-    <h2>Projetos</h2>
-    <p>Em breve, você poderá ver aqui alguns dos meus  projetos.</p>
-  </section>
-
-  <!-- Seção: Contato -->
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>Entre em contato comigo pelo email: Ygoralmeide@email.com</p>
-  </section>
+    <script src="js.js"></script>
 
 </body>
 </html>
-
-

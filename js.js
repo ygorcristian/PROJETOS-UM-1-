@@ -1,12 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-   
-    const modal = document.getElementById('personagem-modal');
-    const closeBtn = document.querySelector('.close-btn');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+    const navLinks = document.querySelectorAll('.nav-list a');
+
+    const personagemModal = document.getElementById('personagem-modal');
+    const personagemModalClose = personagemModal.querySelector('[data-action="close-modal"]');
     const modalTitle = document.getElementById('modal-title');
     const modalDescription = document.getElementById('modal-description');
     const modalAbility = document.getElementById('modal-ability');
     
-
     const personagemData = {
         'Alok': {
             descricao: "Um DJ global que traz ritmo e cura para o campo de batalha.",
@@ -22,60 +24,44 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+    function openModal(modalElement) {
+        modalElement.style.display = 'block';
+    }
 
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav');
-    const navLinks = document.querySelectorAll('.nav-list a');
+    function closeModal(modalElement) {
+        modalElement.style.display = 'none';
+    }
 
-    menuToggle.addEventListener('click', function() {
-        nav.classList.toggle('active');
+    menuToggle.addEventListener('click', () => nav.classList.toggle('active'));
+    navLinks.forEach(link => link.addEventListener('click', () => nav.classList.remove('active')));
+
+    personagemModalClose.addEventListener('click', () => closeModal(personagemModal));
+    
+    window.addEventListener('click', function(event) {
+        if (event.target == personagemModal) {
+            closeModal(personagemModal);
+        }
     });
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            if (nav.classList.contains('active')) {
-                nav.classList.remove('active');
-            }
-        });
-    });
-
 
     document.querySelectorAll('[data-action="open-modal"]').forEach(button => {
         button.addEventListener('click', function() {
             const personagem = this.getAttribute('data-personagem');
             const data = personagemData[personagem];
-            
             if (data) {
                 modalTitle.textContent = `Detalhes de ${personagem}`;
                 modalDescription.textContent = data.descricao;
                 modalAbility.textContent = data.habilidade;
-                modal.style.display = 'block';
+                openModal(personagemModal);
             }
         });
     });
 
-
-    closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
-
-    window.addEventListener('click', function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
-    });
-    
- 
     document.querySelectorAll('[data-action="toggle-info"]').forEach(button => {
         button.addEventListener('click', function() {
             const targetId = this.getAttribute('data-target');
             const targetElement = document.getElementById(targetId);
-            
             if (targetElement) {
-            
                 targetElement.classList.toggle('active');
-
-         
                 if (targetElement.classList.contains('active')) {
                     this.textContent = 'Ocultar Informação';
                 } else {
@@ -84,35 +70,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
-
-    document.querySelectorAll('.btn-secondary, .btn-primary').forEach(button => {
-        const action = button.getAttribute('data-action');
-        
-
-        if (!action || (action !== 'open-modal' && action !== 'toggle-info')) {
-            button.addEventListener('click', function() {
-
-                const buttonText = this.textContent.trim();
-                
-                let feedbackMessage = `Ação para "${buttonText}" executada!`;
-
-                if (buttonText === 'JOGUE AGORA') {
-                    feedbackMessage = 'Redirecionando para a página de download... (Simulação)';
-                } else if (buttonText === 'Ver Guia de Utilidade') {
-                    feedbackMessage = 'Guia de utilidade de itens carregado! (Simulação)';
-                } else if (buttonText === 'Mais Info' || buttonText === 'Patch Notes') {
-                    feedbackMessage = `Lendo detalhes do evento: "${buttonText}". (Simulação)`;
-                } else {
-                    feedbackMessage = `Ação de navegação para "${buttonText}" iniciada. (Simulação)`;
-                }
-
-                modalTitle.textContent = 'Ação Concluída';
-                modalDescription.textContent = feedbackMessage;
-                modalAbility.textContent = 'Em uma página real, você seria redirecionado ou veria o conteúdo carregado aqui.';
-                modal.style.display = 'block';
-
-            });
-        }
+    
+    document.querySelectorAll('[data-action="info-modal"]').forEach(button => {
+        button.addEventListener('click', function() {
+            const buttonText = this.textContent.trim();
+            const feedbackMessage = (buttonText === 'JOGUE AGORA') ? 
+                'Redirecionando para o download do Free Fire... (Simulação)' : 
+                `Conteúdo para "${buttonText}" carregado com sucesso. (Simulação)`;
+            
+            modalTitle.textContent = 'Ação Concluída';
+            modalDescription.textContent = feedbackMessage;
+            modalAbility.textContent = 'Em uma página real, o conteúdo seria exibido ou o link seria aberto.';
+            openModal(personagemModal);
+        });
     });
 });

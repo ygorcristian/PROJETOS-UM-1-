@@ -22,10 +22,10 @@
             <nav class="nav">
                 <ul class="nav-list">
                     <li><a href="#inicio">Início</a></li>
+                    <li><a href="#hall-of-fame">Melhor Jogador</a></li>
                     <li><a href="#personagens">Personagens</a></li>
                     <li><a href="#armas">Armas</a></li>
                     <li><a href="#mapas">Mapas</a></li>
-                    <li><a href="#itens">Itens</a></li>
                     <li><a href="#eventos">Eventos</a></li>
                 </ul>
             </nav>
@@ -34,14 +34,32 @@
 
     <main>
         
+        ...
         <section id="inicio" class="hero">
             <div class="hero-content">
                 <h2>O ÚLTIMO HOMEM DE PÉ</h2>
                 <p>Domine o campo de batalha, explore o arsenal e colete Booyahs!</p>
-                <a href="#" class="btn-primary">JOGUE AGORA</a>
+                
+                <a href="https://play.google.com/store/apps/details?id=com.dts.freefireth&hl=pt_BR" 
+                target="_blank"
+                class="btn-primary">JOGUE AGORA</a>
+                </div>
+        </section>
+...
+
+        <section id="hall-of-fame" class="section dark-bg">
+            <h2>🏆 Hall of Fame | O Jogador Destaque</h2>
+            <div class="highlight-card">
+                
+                <img id="player-photo" class="player-photo-placeholder"
+                    src="yuri.png"
+                    alt="yuri.png">
+                <h3 id="player-name">Cabeça de nós todos.</h3>
+                
+                <p>Booyahs: 999 | K/D: 5.5 | Rank: Desafiante</p>
             </div>
         </section>
-
+        
         <section id="personagens" class="section">
             <h2>👤 Personagens e Habilidades</h2>
             <div class="grid-cards">
@@ -101,17 +119,17 @@
                 <div class="map-item">
                     <h3>Bermuda</h3>
                     <p>O mapa clássico. Possui áreas abertas e zonas urbanas como Peak e Bimasakti Strip.</p>
-                    <button class="btn-secondary">Rotas de Queda</button>
+                    <button class="btn-secondary" data-action="info-modal">Rotas de Queda</button>
                 </div>
                 <div class="map-item">
                     <h3>Purgatório</h3>
                     <p>Conhecido pelo seu terreno montanhoso e pontes longas. Zonas famosas: Brasília e Quarry.</p>
-                    <button class="btn-secondary">Zonas de Loot</button>
+                    <button class="btn-secondary" data-action="info-modal">Zonas de Loot</button>
                 </div>
                 <div class="map-item">
                     <h3>Kalahari</h3>
                     <p>Ambiente desértico e seco, exigindo mais cautela com cover. Zonas famosas: Command Post.</p>
-                    <button class="btn-secondary">Pontos Estratégicos</button>
+                    <button class="btn-secondary" data-action="info-modal">Pontos Estratégicos</button>
                 </div>
             </div>
         </section>
@@ -124,7 +142,7 @@
                     <li>**Colete Nível 4:** Máxima proteção contra dano corporal.</li>
                     <li>**Paredes de Gel (Gloowalls):** Escudo defensivo instantâneo.</li>
                 </ul>
-                <button class="btn-primary">Ver Guia de Utilidade</button>
+                <button class="btn-primary" data-action="info-modal">Ver Guia de Utilidade</button>
             </div>
         </section>
         
@@ -135,26 +153,23 @@
                     <h4>Novo Passe de Elite: "Fúria Cibernética"</h4>
                     <p>Disponível na próxima semana. Inclui skins lendárias e recompensas exclusivas.</p>
                     <span class="date">12/Dez</span>
-                    <button class="btn-secondary">Mais Info</button>
+                    <button class="btn-secondary" data-action="info-modal">Mais Info</button>
                 </article>
                 <article>
                     <h4>Atualização da Temporada 2026</h4>
                     <p>Balanceamento de armas (NERF na M1887) e novo sistema de ranking.</p>
                     <span class="date">01/Jan</span>
-                    <button class="btn-secondary">Patch Notes</button>
+                    <button class="btn-secondary" data-action="info-modal">Patch Notes</button>
                 </article>
             </div>
         </section>
 
     </main>
 
-    <footer class="footer">
-        <p>Free Fire Fan Site &copy; 2025 | Não afiliado à Garena.</p>
-    </footer>
 
     <div id="personagem-modal" class="modal">
         <div class="modal-content">
-            <span class="close-btn">&times;</span>
+            <span class="close-btn" data-action="close-modal">&times;</span>
             <h3 id="modal-title">Detalhes do Personagem</h3>
             <p id="modal-description"></p>
             <p id="modal-ability"></p>
@@ -165,5 +180,3 @@
 
 </body>
 </html>
-
-
